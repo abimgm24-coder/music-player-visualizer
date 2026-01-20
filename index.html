@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="player">
+    <h2>🎵 Music Player</h2>
+
+    <!-- SINGLE audio element (VERY IMPORTANT) -->
+    <audio id="audio"></audio>
+
+    <!-- Progress bar -->
+    <input type="range" id="progress" value="0" min="0" max="100" />
+    <label for="volume">Volume:</label>
+<input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+
+
+    <!-- Audio Visualizer -->
+    <canvas id="visualizer" width="300" height="100"></canvas>
+    <!-- Playlist -->
+<ul id="playlist">
+  <li onclick="playFromList(0)">Song 1</li>
+  <li onclick="playFromList(1)">Song 2</li>
+  <li onclick="playFromList(2)">Song 3</li>
+</ul>
+
+
+    <!-- Controls -->
+    <div class="controls">
+      <button onclick="prevSong()">⏮ Prev</button>
+      <button onclick="playMusic()">▶ Play</button>
+      <button onclick="pauseMusic()">⏸ Pause</button>
+      <button onclick="nextSong()">⏭ Next</button>
+    </div>
+
+    <!-- Song name -->
+    <p id="songName"></p>
+    <p id="timeDisplay">0:00 / 0:00</p>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
